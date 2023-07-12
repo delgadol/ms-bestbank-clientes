@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class ModelMapperUtils {
+  
   private static final ModelMapper modelMapper = new ModelMapper();
 
   public static <S, T> Mono<T> mapToMono(Mono<S> source, Class<T> targetClass) {
@@ -23,7 +24,6 @@ public class ModelMapperUtils {
   }
   
   private ModelMapperUtils() {
-    /* esto es un comentario */
     
   }
   
