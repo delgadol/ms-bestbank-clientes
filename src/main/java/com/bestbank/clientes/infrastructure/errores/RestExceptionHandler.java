@@ -1,5 +1,6 @@
 package com.bestbank.clientes.infrastructure.errores;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -57,7 +58,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
   }
 
   private ResponseEntity<ErrorResponse> buildResponseEntity(HttpStatus httpStatus, Exception exc) {
-    return buildResponseEntity(httpStatus, exc, null);
+    return buildResponseEntity(httpStatus, exc, new ArrayList<String>());
   }
 
   private ResponseEntity<ErrorResponse> buildResponseEntity(HttpStatus httpStatus, 
