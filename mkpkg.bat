@@ -1,0 +1,11 @@
+mkdir src\main\java\com\bestbank\clientes\domain\model
+mkdir src\main\java\com\bestbank\clientes\domain\repository
+mkdir src\main\java\com\bestbank\clientes\domain\service
+mkdir src\main\java\com\bestbank\clientes\application
+mkdir src\main\java\com\bestbank\clientes\application\dto
+mkdir src\main\java\com\bestbank\clientes\infrastructure\persistence\repository
+mkdir src\main\java\com\bestbank\clientes\infrastructure\persistence\query
+mkdir src\main\java\com\bestbank\clientes\infrastructure\external\api
+mkdir src\main\java\com\bestbank\clientes\infrastructure\external\services
+mkdir src\main\java\com\bestbank\clientes\presentation\controller
+mkdir src\main\java\com\bestbank\clientes\presentation\dto
