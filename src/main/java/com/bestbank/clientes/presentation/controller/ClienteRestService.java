@@ -3,7 +3,6 @@ package com.bestbank.clientes.presentation.controller;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.bestbank.clientes.application.ClientesApplication;
 import com.bestbank.clientes.presentation.dto.ClienteModReq;
@@ -41,7 +39,7 @@ public class ClienteRestService {
    */
 
   @GetMapping("")
-  public Flux<ClienteRes> getClients(){
+  public Flux<ClienteRes> getClients() {
     return clientesApp.getClients();
   }
   
@@ -53,7 +51,7 @@ public class ClienteRestService {
    */
 
   @GetMapping("/{id}")
-  public Mono<ClienteRes> getClientById(@PathVariable(name = "id") String idClient){
+  public Mono<ClienteRes> getClientById(@PathVariable(name = "id") String idClient) {
     return clientesApp.getClientById(idClient);
   }
   
@@ -65,7 +63,8 @@ public class ClienteRestService {
    * @return un Mono que emite el objeto ClienteRes resultante
    */
   @PutMapping("/{id}")
-  public Mono<ClienteRes> putClient(@PathVariable(name="id") String idClient,@Valid @RequestBody ClienteModReq cliente){
+  public Mono<ClienteRes> putClient(@PathVariable(name = "id") String idClient, 
+      @Valid @RequestBody ClienteModReq cliente) {
     return clientesApp.putClient(idClient, cliente);
   }
   
@@ -76,7 +75,7 @@ public class ClienteRestService {
    * @return un Mono que emite el objeto ClienteRes resultante
    */
   @PostMapping("")
-  public Mono<ClienteRes> postClient(@Valid @RequestBody ClienteReq cliente){
+  public Mono<ClienteRes> postClient(@Valid @RequestBody ClienteReq cliente) {
     return clientesApp.postClient(cliente);
   }
   
@@ -88,7 +87,7 @@ public class ClienteRestService {
    * @return un Mono que emite el objeto ClienteRes correspondiente al cliente eliminado
    */
   @DeleteMapping("/{id}")
-  public Mono<ClienteRes> delClient(@PathVariable(name="id") String idClient){
+  public Mono<ClienteRes> delClient(@PathVariable(name = "id") String idClient) {
     return clientesApp.delClient(idClient);
   }
   
@@ -100,7 +99,8 @@ public class ClienteRestService {
    * @return un Mono que emite el objeto ClienteRes resultante
    */
   @PutMapping("/{id}/estado/{idEstado}")
-  public Mono<ClienteRes> putClientState(@PathVariable(name="id") String idClient, @PathVariable(name="idEstado") String stateClient){
+  public Mono<ClienteRes> putClientState(@PathVariable(name = "id") String idClient, 
+      @PathVariable(name = "idEstado") String stateClient) {
     return clientesApp.putClientState(idClient, stateClient);
   }
 

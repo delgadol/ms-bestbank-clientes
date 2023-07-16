@@ -1,4 +1,4 @@
-package com.bestbank.clientes.domain.service;
+package com.bestbank.clientes.application.services;
 
 import org.springframework.stereotype.Service;
 

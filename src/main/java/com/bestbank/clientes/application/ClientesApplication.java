@@ -5,10 +5,10 @@ import java.util.NoSuchElementException;
 
 import org.springframework.stereotype.Component;
 
+import com.bestbank.clientes.application.services.ClienteService;
 import com.bestbank.clientes.application.utils.ApplicationConstants;
 import com.bestbank.clientes.application.utils.BankFnUtils;
 import com.bestbank.clientes.domain.model.Cliente;
-import com.bestbank.clientes.domain.service.ClienteService;
 import com.bestbank.clientes.infrastructure.utils.ModelMapperUtils;
 import com.bestbank.clientes.presentation.dto.ClienteModReq;
 import com.bestbank.clientes.presentation.dto.ClienteReq;
@@ -47,6 +47,7 @@ public class ClientesApplication {
         clienteModificado = ModelMapperUtils.map(clienteEntidad, Cliente.class);
         clienteModificado.setNombres(cliente.getNombres());
         clienteModificado.setApellidos(cliente.getApellidos());
+        clienteModificado.setFechaModificacion(BankFnUtils.getDateTime());
         return ModelMapperUtils.mapToMono(servCliente.save(clienteModificado), ClienteRes.class);
       });
   }
@@ -60,6 +61,8 @@ public class ClientesApplication {
         nuevoCliente.setSecCtrl(BankFnUtils.uniqueProductCode());
         nuevoCliente.setEstado("0");
         nuevoCliente.setIndEliminado(0);
+        nuevoCliente.setFechaRegistro(BankFnUtils.getDateTime());
+        nuevoCliente.setFechaModificacion(BankFnUtils.getDateTime());
         return ModelMapperUtils.mapToMono(servCliente.save(nuevoCliente), ClienteRes.class);
       }).switchIfEmpty(Mono.error(
         new DuplicateFormatFlagsException(
@@ -75,6 +78,7 @@ public class ClientesApplication {
       .flatMap(clienteDB -> {
         Cliente modificadoCliente = ModelMapperUtils.map(clienteDB, Cliente.class);
         modificadoCliente.setEstado(stateClient);
+        modificadoCliente.setFechaModificacion(BankFnUtils.getDateTime());
         return ModelMapperUtils.mapToMono(servCliente.save(modificadoCliente), ClienteRes.class);
       });
     
@@ -85,6 +89,7 @@ public class ClientesApplication {
       .flatMap(clienteDB -> {
         Cliente modificadoCliente = ModelMapperUtils.map(clienteDB, Cliente.class);
         modificadoCliente.setIndEliminado(ApplicationConstants.REGISTRO_ELIMINADO);
+        modificadoCliente.setFechaModificacion(BankFnUtils.getDateTime());
         return ModelMapperUtils.mapToMono(servCliente.save(modificadoCliente), ClienteRes.class);
       });
     

@@ -1,6 +1,7 @@
 package com.bestbank.clientes.domain.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -34,5 +35,9 @@ public class Cliente  implements Serializable {
   private String estado;
   
   private Integer indEliminado;
+  
+  private Date fechaRegistro;
+  
+  private Date fechaModificacion;
 
 }

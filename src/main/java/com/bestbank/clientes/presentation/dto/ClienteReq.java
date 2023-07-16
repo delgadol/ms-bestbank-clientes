@@ -14,21 +14,20 @@ import lombok.Data;
 @Data
 public class ClienteReq {
   
-  @NotNull
+  @NotNull(message = "Tipo de Cliente requerido")
   private TipoCliente tipoCliente;
   
-  @NotNull
+  @NotNull(message = "Tipo de Documento requerido")
   private TipoDocumento tipoDocumento;
   
-  @NotEmpty
+  @NotEmpty(message = "Numero de Dcocumento requerido")
   private String numDocumento;
   
-  @NotEmpty
+  @NotEmpty(message = "Nombre de Cliente es requerido")
     private String nombres;
   
-  
-  @NotEmpty
-    private String apellidos;
+  @NotEmpty(message = "Apellido de Cliente requerido")
+  private String apellidos;
   
   
 }
