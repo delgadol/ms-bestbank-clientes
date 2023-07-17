@@ -27,19 +27,37 @@ public class ClientesApplication {
     this.servCliente = servCliente;
   }
   
+  /**
+   * Obtiene todos los clientes.
+   *
+   * @return Flux que emite la respuesta con todos los clientes.
+   */
   public Flux<ClienteRes> getClients() {
     return ModelMapperUtils.mapToFlux(
       servCliente.findAllByIndEliminado(ApplicationConstants.REGISTRO_NO_ELIMINADO),
       ClienteRes.class);
   }
 
+  /**
+   * Obtiene un cliente por su ID.
+   * 
+   * @param idClient Identificador del cliente que se desea obtener.
+   * @return Mono que emite la respuesta con el cliente encontrado.
+   */
   public Mono<ClienteRes> getClientById(String idClient) {
     return esClienteValido(idClient)
       .flatMap(clienteEntidad -> {
         return Mono.just(ModelMapperUtils.map(clienteEntidad, ClienteRes.class));
       });       
   }
-
+  
+  /**
+   * Actualiza un cliente existente por su ID.
+   * 
+   * @param idClient Identificador del cliente que se desea actualizar.
+   * @param cliente Objeto que contiene los datos actualizados del cliente.
+   * @return Mono que emite la respuesta con el cliente actualizado.
+   */
   public Mono<ClienteRes> putClient(String idClient, ClienteModReq cliente) {
     return esClienteValido(idClient)
       .flatMap(clienteEntidad -> {
@@ -52,6 +70,12 @@ public class ClientesApplication {
       });
   }
 
+  /**
+   * Crea un nuevo cliente.
+   * 
+   * @param cliente Objeto que contiene los datos del nuevo cliente.
+   * @return Mono que emite la respuesta con el cliente creado.
+   */
   public Mono<ClienteRes> postClient(ClienteReq cliente) {
     return servCliente.countByTipoDocumentoAndNumDocumento(cliente.getTipoDocumento(), 
       cliente.getNumDocumento())
@@ -73,6 +97,13 @@ public class ClientesApplication {
       );
   }
   
+  /**
+   * Actualiza el estado de un cliente por su ID.
+   * 
+   * @param idClient Identificador del cliente al que se desea actualizar el estado.
+   * @param stateClient Nuevo estado del cliente.
+   * @return Mono que emite la respuesta con el cliente actualizado.
+   */
   public Mono<ClienteRes> putClientState(String idClient, String stateClient) {
     return esClienteValido(idClient)
       .flatMap(clienteDB -> {
@@ -84,6 +115,12 @@ public class ClientesApplication {
     
   }
   
+  /**
+   * Elimina un cliente por su ID.
+   * 
+   * @param idClient Identificador del cliente que se desea eliminar.
+   * @return Mono que emite la respuesta al eliminar el cliente.
+   */
   public Mono<ClienteRes> delClient(String idClient) {
     return esClienteValido(idClient)
       .flatMap(clienteDB -> {
