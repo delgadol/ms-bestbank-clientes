@@ -8,6 +8,9 @@ import com.bestbank.clientes.domain.utils.TipoDocumento;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Interfaz que define los métodos para acceder y gestionar la persistencia de los clientes.
+ */
 public interface ClientesRepository extends ReactiveMongoRepository<Cliente, String> {
 
   Flux<Cliente> findAllByIndEliminado(int indEliminado); 

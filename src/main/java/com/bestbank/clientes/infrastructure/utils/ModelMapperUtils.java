@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase de utilidad que proporciona métodos para mapear objetos entre diferentes 
+ * modelos utilizando ModelMapper.
+ */
 @Component
 public class ModelMapperUtils {
   

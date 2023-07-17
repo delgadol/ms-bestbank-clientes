@@ -10,6 +10,9 @@ import com.bestbank.clientes.infrastructure.persistence.ClientesRepositoryImpl;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase que proporciona servicios relacionados con la gestión de clientes.
+ */
 @Service
 public class ClienteService extends ClientesRepositoryImpl {
 

@@ -11,6 +11,9 @@ import com.bestbank.clientes.domain.utils.TipoDocumento;
 
 import lombok.Data;
 
+/**
+ * Clase que representa a un cliente y que implementa la interfaz Serializable.
+ */
 @Data
 @Document("personas")
 public class Cliente  implements Serializable {

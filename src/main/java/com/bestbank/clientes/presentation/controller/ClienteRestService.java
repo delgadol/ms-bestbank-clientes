@@ -20,6 +20,9 @@ import com.bestbank.clientes.presentation.dto.ClienteRes;
 
 import jakarta.validation.Valid;
 
+/**
+ * Clase que proporciona servicios REST para la gestión de clientes.
+ */
 @RestController
 @Validated
 @RequestMapping("/v1/clientes")

@@ -7,6 +7,11 @@ import com.bestbank.clientes.domain.utils.TipoDocumento;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+/**
+ * Clase abstracta que proporciona una implementación base para el repositorio de clientes.
+ * Las implementaciones concretas deben extender esta clase y proporcionar la lógica específica 
+ * del repositorio.
+ */
 public  abstract class ClientesRepositoryImpl {
   
   protected final ClientesRepository clientesRepo;
