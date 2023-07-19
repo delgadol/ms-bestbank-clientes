@@ -9,6 +9,7 @@ import com.bestbank.clientes.application.services.ClienteService;
 import com.bestbank.clientes.application.utils.ApplicationConstants;
 import com.bestbank.clientes.application.utils.BankFnUtils;
 import com.bestbank.clientes.domain.model.Cliente;
+import com.bestbank.clientes.domain.utils.TipoEstadoFinaciero;
 import com.bestbank.clientes.infrastructure.utils.ModelMapperUtils;
 import com.bestbank.clientes.presentation.dto.ClienteModReq;
 import com.bestbank.clientes.presentation.dto.ClienteReq;
@@ -84,6 +85,7 @@ public class ClientesApplication {
         Cliente nuevoCliente = ModelMapperUtils.map(cliente, Cliente.class);
         nuevoCliente.setSecCtrl(BankFnUtils.uniqueProductCode());
         nuevoCliente.setEstado("0");
+        nuevoCliente.setEstadoFinanciero(TipoEstadoFinaciero.SOLVENTE);
         nuevoCliente.setIndEliminado(0);
         nuevoCliente.setFechaRegistro(BankFnUtils.getDateTime());
         nuevoCliente.setFechaModificacion(BankFnUtils.getDateTime());

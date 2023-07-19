@@ -1,6 +1,7 @@
 package com.bestbank.clientes.presentation.dto;
 
 import com.bestbank.clientes.domain.utils.TipoCliente;
+import com.bestbank.clientes.domain.utils.TipoEstadoFinaciero;
 
 import lombok.Data;
 
@@ -19,5 +20,7 @@ public class ClienteRes {
   private String estado;
   
   private TipoCliente tipoCliente;
+  
+  private TipoEstadoFinaciero estadoFinanciero;
   
 }

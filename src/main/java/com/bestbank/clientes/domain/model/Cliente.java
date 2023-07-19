@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.bestbank.clientes.domain.utils.TipoEstadoFinaciero;
 import com.bestbank.clientes.domain.utils.TipoCliente;
 import com.bestbank.clientes.domain.utils.TipoDocumento;
 
@@ -36,6 +37,8 @@ public class Cliente  implements Serializable {
   private String apellidos;
   
   private String estado;
+  
+  private TipoEstadoFinaciero estadoFinanciero;
   
   private Integer indEliminado;
   
