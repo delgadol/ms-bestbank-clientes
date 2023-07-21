@@ -47,9 +47,9 @@ public class ClientesApplication {
    */
   public Mono<ClienteRes> getClientById(String idClient) {
     return esClienteValido(idClient)
-      .flatMap(clienteEntidad -> {
-        return Mono.just(ModelMapperUtils.map(clienteEntidad, ClienteRes.class));
-      });       
+      .flatMap(clienteEntidad -> 
+        Mono.just(ModelMapperUtils.map(clienteEntidad, ClienteRes.class))
+      );       
   }
   
   /**

@@ -11,4 +11,10 @@ public class ApplicationConstants {
   
   public static final String ESTADO_NORMAL = "0";
 
+  private ApplicationConstants() {
+    
+  }
+  
+  
+
 }
