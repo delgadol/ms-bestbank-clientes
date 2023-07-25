@@ -41,7 +41,7 @@ public class ClienteRestService {
    * @return un Flux que emite objetos ClienteRes correspondientes a todos los clientes
    */
 
-  @GetMapping("")
+  @GetMapping(path = {"","/"})
   public Flux<ClienteRes> getClients() {
     return clientesApp.getClients();
   }

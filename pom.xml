@@ -11,7 +11,7 @@
 
   <groupId>com.bestbank.clientes</groupId>
   <artifactId>ms-bestbank-clientes</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>ms-bestbank-clientes</name>
   <description>Demo ms clientes</description>
   <properties>
