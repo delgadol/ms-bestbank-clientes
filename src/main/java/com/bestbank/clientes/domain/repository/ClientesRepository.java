@@ -1,10 +1,8 @@
 package com.bestbank.clientes.domain.repository;
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-
 import com.bestbank.clientes.domain.model.Cliente;
 import com.bestbank.clientes.domain.utils.TipoDocumento;
-
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

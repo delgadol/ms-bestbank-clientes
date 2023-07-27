@@ -1,4 +1,4 @@
-package com.bestbank.clientes.domain.model;
+package com.bestbank.clientes.application.message.dto;
 
 import com.bestbank.clientes.domain.utils.TipoCliente;
 import com.bestbank.clientes.domain.utils.TipoDocumento;
@@ -6,19 +6,16 @@ import com.bestbank.clientes.domain.utils.TipoEstadoFinaciero;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Clase que representa a un cliente y que implementa la interfaz Serializable.
  */
+
 @Data
-@Document("personas")
-public class Cliente  implements Serializable {
+public class ClienteInfoKafka  implements Serializable {
   
   private static final long serialVersionUID = 3816734689501931947L;
 
-  @Id
   private String id;
   
   private String secCtrl;
@@ -43,6 +40,12 @@ public class Cliente  implements Serializable {
   
   private Date fechaRegistro;
   
-  private Date fechaModificacion;
+  private Date fechaModificacion;  
+  
+  private String numeroTelefono;
+  
+  private String imeiTelefono;
+  
+  private String emailPersona;
 
 }

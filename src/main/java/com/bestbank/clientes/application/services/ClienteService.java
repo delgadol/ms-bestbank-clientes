@@ -1,12 +1,10 @@
 package com.bestbank.clientes.application.services;
 
-import org.springframework.stereotype.Service;
-
 import com.bestbank.clientes.domain.model.Cliente;
 import com.bestbank.clientes.domain.repository.ClientesRepository;
 import com.bestbank.clientes.domain.utils.TipoDocumento;
 import com.bestbank.clientes.infrastructure.persistence.ClientesRepositoryImpl;
-
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -2,7 +2,6 @@ package com.bestbank.clientes.presentation.dto;
 
 import com.bestbank.clientes.domain.utils.TipoCliente;
 import com.bestbank.clientes.domain.utils.TipoDocumento;
-
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -29,5 +28,7 @@ public class ClienteReq {
   @NotEmpty(message = "Apellido de Cliente requerido")
   private String apellidos;
   
+  @NotNull(message = "Es cliente Monedero")
+  private Integer indMonedero;  
   
 }

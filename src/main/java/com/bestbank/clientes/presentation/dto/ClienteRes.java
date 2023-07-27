@@ -2,7 +2,6 @@ package com.bestbank.clientes.presentation.dto;
 
 import com.bestbank.clientes.domain.utils.TipoCliente;
 import com.bestbank.clientes.domain.utils.TipoEstadoFinaciero;
-
 import lombok.Data;
 
 /**
