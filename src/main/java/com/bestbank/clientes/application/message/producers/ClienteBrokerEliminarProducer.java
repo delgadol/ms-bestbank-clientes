@@ -1,6 +1,6 @@
 package com.bestbank.clientes.application.message.producers;
 
-import com.bestbank.clientes.application.message.dto.ClienteInfoKafka;
+import com.bestbank.clientes.application.message.dto.ClienteBrokerRes;
 import com.bestbank.clientes.application.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class ClienteRegistroProducer {
+public class ClienteBrokerEliminarProducer {
   
   @Autowired
   private KafkaTemplate<String, String> kafkaTemplate;
   
-  private static final String KAFKA_TOPICO = "topic-registro-cliente-ok";
+  private static final String KAFKA_TOPICO = "clientes-eliminado";
   
-  public void sendRegistroClientOk(ClienteInfoKafka cliente) {
+  public void sendEliminacionClientRes(ClienteBrokerRes cliente) {
     
     String jsonCliente = JsonUtils.objectToJson(cliente);
     

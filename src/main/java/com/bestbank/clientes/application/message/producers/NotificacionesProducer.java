@@ -15,12 +15,13 @@ public class NotificacionesProducer {
   @Autowired
   private KafkaTemplate<String, String> kafkaTemplate;
   
-  private static final String KAFKA_NOTIFICACIONES = "topic-movil-notif";
+  private static final String KAFKA_NOTIFICACIONES = "notificaciones-publicada";
   
   
-  public void sendNotification(String msgNotificacion) {
+  public void sendNotification(Object msgNotificacion) {
     NotificacionInfoKafka notificacion = 
-        new NotificacionInfoKafka(BankFnUtils.uniqueProductCode(), msgNotificacion);
+        new NotificacionInfoKafka(BankFnUtils.uniqueProductCode(), 
+            JsonUtils.objectToJson(msgNotificacion));
     String jsonNotificacion = JsonUtils.objectToJson(notificacion);
     log.info("Enviando Notificacion");
     this.kafkaTemplate.send(KAFKA_NOTIFICACIONES, jsonNotificacion);    
