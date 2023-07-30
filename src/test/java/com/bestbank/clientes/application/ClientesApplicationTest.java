@@ -27,11 +27,6 @@ import reactor.test.StepVerifier;
 @ExtendWith(MockitoExtension.class)
 class ClientesApplicationTest {
 
-  @Test
-  @Disabled
-  void test() {
-    fail("Not yet implemented");
-  }
   
   @Mock
   ClienteService servCliente;
@@ -157,7 +152,7 @@ class ClientesApplicationTest {
     .thenReturn(Mono.just(clienteEliminado));
     
     StepVerifier.create(clientesApp.delClient(cliente.getId()))
-      .assertNext(t -> { Assertions.assertEquals(cliente.getIndEliminado(), 1);})
+      .assertNext(t -> { Assertions.assertEquals(1,cliente.getIndEliminado());})
       .verifyComplete();    
     
   }

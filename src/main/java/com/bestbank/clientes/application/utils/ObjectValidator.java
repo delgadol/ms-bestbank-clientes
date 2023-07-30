@@ -21,9 +21,9 @@ public class ObjectValidator<T> {
     public Boolean validateObject(T object) {
         Set<ConstraintViolation<T>> violations = validator.validate(object);
         
-        violations.forEach(t -> {
-          log.error("error :" + t.getMessage());
-        });
+        violations.forEach(t -> 
+          log.error("error :" + t.getMessage())
+        );
         
         return violations.isEmpty();
     }

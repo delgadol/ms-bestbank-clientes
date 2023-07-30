@@ -25,7 +25,7 @@ import reactor.core.publisher.Mono;
 
 
 @WebFluxTest(ClienteRestService.class)
-public class ClientRestServiceTest {
+class ClientRestServiceTest {
   
   @MockBean
   ClientesApplication clientesApp;

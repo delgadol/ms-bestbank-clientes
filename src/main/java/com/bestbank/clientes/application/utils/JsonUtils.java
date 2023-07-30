@@ -1,7 +1,6 @@
 package com.bestbank.clientes.application.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
@@ -39,11 +38,9 @@ public class JsonUtils {
   public static <T> T jsonToObject(String jsonStr, Class<T> clazz) {
       try {
         return objectMapper.readValue(jsonStr, clazz);
-      } catch (JsonMappingException e) {
-        e.printStackTrace();
       } catch (JsonProcessingException e) {
         e.printStackTrace();
-      }      
+      }       
       return null;
   }
 }

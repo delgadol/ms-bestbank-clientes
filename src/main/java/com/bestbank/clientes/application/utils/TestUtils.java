@@ -8,6 +8,7 @@ import org.springframework.core.io.ClassPathResource;
 
 public class TestUtils {
   
+  private TestUtils() {}
   
   private static ObjectMapper objectMapper = new ObjectMapper();
 
