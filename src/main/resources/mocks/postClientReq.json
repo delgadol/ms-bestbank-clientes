@@ -1,0 +1,8 @@
+{
+    "tipoCliente" : "PERSONAL",
+    "tipoDocumento" : "DNI",
+    "numDocumento" : "123456789124",
+    "nombres" : "Alejandro Andres",
+    "apellidos" : "Melendez Sarate",
+    "indMonedero": 1
+}

@@ -1,0 +1,15 @@
+	{
+		"id": "64c46a358724896e2b8b5aa4",
+		"secCtrl": "49045e7f-8b92-4b90-80d1-0c588d702c4f",
+		"tipoCliente": "PERSONAL",
+		"tipoDocumento": "DNI",
+		"numDocumento": "123456789124",
+		"nombres": "Alejandro Andres",
+		"apellidos": "Melendez Sarate",
+		"estado": "0",
+		"estadoFinanciero": "SOLVENTE",
+		"indEliminado": 1,
+		"indMonedero": 1,
+		"fechaRegistro": "2023-07-29T01:24:05.570Z",
+		"fechaModificacion": "2023-07-29T01:24:05.571Z"
+	}
